@@ -18,7 +18,7 @@ public class KambuTest1 {
     private WebDriver driver;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp(){
         String driverPath = "./chromedriver";
         System.setProperty("webdriver.chrome.driver", "./chromedriver");
         driver = new ChromeDriver();
@@ -26,7 +26,7 @@ public class KambuTest1 {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         driver.close();
         driver.quit();
     }

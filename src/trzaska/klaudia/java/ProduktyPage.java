@@ -37,4 +37,18 @@ public class ProduktyPage {
             e.printStackTrace();
         }
     }
+    public WebElement editButton () {
+        return shortWait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.className("icon-pencil")));
+    }
+    public WebElement checkBox () {
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[3]/div[1]/div[2]/div/label/span"));
+
+    }
 }
