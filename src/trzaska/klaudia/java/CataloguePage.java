@@ -17,6 +17,6 @@ public class CataloguePage {
     public WebElement produktyButton () {
         return shortWait.until(
                 ExpectedConditions.visibilityOfElementLocated(
-                        By.cssSelector("[class='icon-catalogue']")));
+                        By.linkText("Produkty")));
     }
 }

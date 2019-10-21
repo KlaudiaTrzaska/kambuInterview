@@ -1,19 +1,18 @@
 package trzaska.klaudia.test;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import trzaska.klaudia.java.CataloguePage;
 import trzaska.klaudia.java.KambuPage;
-import trzaska.klaudia.java.Page;
+import trzaska.klaudia.java.ProduktyPage;
 
-import static org.junit.Assert.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class KambuTest1 {
     private WebDriver driver;
@@ -43,9 +42,12 @@ public class KambuTest1 {
         // Click on Produkty button
         CataloguePage cataloguePage = new CataloguePage(driver);
         cataloguePage.produktyButton().click();
-        // Click on searchbar
-        // Type "CoolBox"
-
-        // Assert there are 31 Web Elements that meet criteria
+        // Click on searchbar and Type "CoolBox"
+        ProduktyPage produktyPage = new ProduktyPage(driver);
+        produktyPage.searchbar().sendKeys("CoolBox");
+        // Assert there are 17 Web Elements that meet criteria
+        produktyPage.waitForSearch();
+        List<WebElement> coolboxList = produktyPage.findAll();
+        Assert.assertEquals(17, coolboxList.size());
     }
 }
