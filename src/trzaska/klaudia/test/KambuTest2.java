@@ -4,9 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class PageTest {
+public class KambuTest2 {
 
     @Before
     public void setUp() throws Exception {
