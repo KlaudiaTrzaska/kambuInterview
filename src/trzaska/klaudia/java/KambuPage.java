@@ -19,9 +19,11 @@ public class KambuPage {
         return shortWait.until(
                 ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[type='email']")));
     }
+
     public WebElement passwordInput () {
        return driver.findElement(By.name("_password"));
     }
+
     public WebElement loginButton () {
         return driver.findElement(By.cssSelector("[type='button']"));
     }

@@ -12,10 +12,12 @@ import java.util.List;
 public class ProduktyPage {
     private WebDriver driver;
     WebDriverWait shortWait;
+    WebDriverWait longWait;
 
     public ProduktyPage(WebDriver driver) {
         this.driver = driver;
         shortWait = new WebDriverWait(driver, 10);
+        longWait = new WebDriverWait(driver, 15);
     }
     public WebElement searchbar () {
         return shortWait.until(
@@ -37,6 +39,7 @@ public class ProduktyPage {
             e.printStackTrace();
         }
     }
+
     public WebElement editButton () {
         return shortWait.until(
         ExpectedConditions.visibilityOfElementLocated(
@@ -56,11 +59,8 @@ public class ProduktyPage {
     }
 
     public WebElement checkBox () {
-
         return shortWait.until(
                 ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[3]/div[1]/div[2]/div/label/span")));
-
-//        return driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[3]/div[1]/div[2]/div/label/span"));
     }
 
     public void enableCheckBox () {
@@ -77,12 +77,16 @@ public class ProduktyPage {
     public WebElement saveButton () {
         return driver.findElement(By.xpath(".//button[text()='Zapisz zmiany']"));
     }
+
     public WebElement profile() {
         return driver.findElement(By.cssSelector("i[class*='icon-chevron-bottom']"));
     }
+
     public WebElement logOutButton () {
         return driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div/header/div/nav/div[1]/div/div[2]/ul/li[2]/a/i"));
+    }
 
-        //
+    public WebElement descriptionField () {
+        return driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[3]/div[8]/div/div/textarea"));
     }
 }
