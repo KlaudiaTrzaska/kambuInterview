@@ -12,8 +12,9 @@ public class CataloguePage {
 
     public CataloguePage (WebDriver driver){
         this.driver = driver;
-        shortWait = new WebDriverWait(driver, 5);
+        shortWait = new WebDriverWait(driver, 10);
     }
+
     public WebElement produktyButton () {
         return shortWait.until(
                 ExpectedConditions.visibilityOfElementLocated(
